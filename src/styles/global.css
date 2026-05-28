@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  font-family: "Space Grotesk", "Orbitron", "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top left, rgba(6, 182, 212, 0.15), transparent 35%),
+    radial-gradient(circle at 20% 20%, rgba(124, 58, 237, 0.2), transparent 40%),
+    linear-gradient(160deg, #020617, #0b1026 45%, #020617 100%);
+  color: #f8fafc;
+}
+
+.glass {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  backdrop-filter: blur(16px);
+}
+
+.glow-border {
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.25), inset 0 0 12px rgba(124, 58, 237, 0.15);
+}
+
+.radar-ring {
+  position: relative;
+}
+
+.radar-ring::after {
+  content: "";
+  position: absolute;
+  inset: -18px;
+  border-radius: 999px;
+  border: 1px solid rgba(34, 211, 238, 0.3);
+  animation: radar 2.8s ease-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
